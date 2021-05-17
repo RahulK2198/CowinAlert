@@ -1,0 +1,46 @@
+<div *ngIf="showAlert" class="card-container card highlight-card">
+    SLOTS are Available.
+</div>
+
+<table *ngIf="showAlert">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Vaccine</th>
+            <th>Age</th>
+            <th>Date</th>
+            <th>Seats</th>
+            <th>Pincode</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let response of responses">
+            <td>{{response.name}}</td>
+            <td>{{response.vaccine}}</td>
+            <td>{{response.min_age_limit}}</td>
+            <td>{{response.date}}</td>
+            <td>{{response.available_capacity}}</td>
+            <td>{{response.pincode}}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<div>
+    <ol>
+        <li *ngFor="let center of centers, trackBy: trackCenters">
+        {{center.name}},&nbsp;&nbsp;&nbsp;&nbsp;{{center.address}},&nbsp;&nbsp;&nbsp;&nbsp;{{center.pincode}} 
+        <ol>
+            <li *ngFor="let session of center.sessions">
+                <div [ngClass]="{'card1 ': session.available_capacity>0}"  class="card2">
+                    <span>Capacity = {{session.available_capacity}}</span> &nbsp;&nbsp;&nbsp;&nbsp;<br>
+                    <span>Age = {{session.min_age_limit}}</span>&nbsp;&nbsp;&nbsp;&nbsp;<br>
+                    <span>Date = {{session.date}}</span>&nbsp;&nbsp;&nbsp;&nbsp;<br>
+                    <span>Vaccine = {{session.vaccine}}</span>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+            </li>
+        </ol>
+        </li>
+    </ol>
+</div>
+
+
