@@ -10,7 +10,7 @@ import {throwError} from 'rxjs';
 })
 export class CowinService {
 
-  private url = 'https://cdn-api.co-vin.in/api/v2/appointment/sessions/calendarByDistrict?district_id=191&date=16-05-2021';
+  private url = 'https://cdn-api.co-vin.in/api/v2/appointment/sessions/calendarByDistrict?district_id=191&date=17-05-2021';
   constructor(private http: HttpClient) { }
 
   getCenters(): Observable<Centers[]>{

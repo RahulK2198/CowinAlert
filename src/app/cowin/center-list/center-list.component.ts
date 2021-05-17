@@ -46,18 +46,6 @@ export class CenterListComponent implements OnInit, OnDestroy {
       },
       function(error){
         console.log("error aaya hai bhai, "+error);
-      },
-      () => {
-        console.log("Idhar aa gya");
-        for (let i=0;i<this.centers.length;i++){
-          for (let j=0;j<this.centers[i].sessions.length;j++){
-            if (this.centers[i].sessions[j].available_capacity==0 && this.centers[i].sessions[j].min_age_limit==18){
-              console.log("Yayy");
-              this.showAlert=true;
-
-            }
-          }
-        }
       }
     );
 
